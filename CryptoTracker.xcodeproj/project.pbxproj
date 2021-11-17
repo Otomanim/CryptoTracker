@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F015F3427446A8600E3E8D5 /* UIImageView+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F015F3327446A8600E3E8D5 /* UIImageView+LoadImage.swift */; };
+		3F015F37274471C900E3E8D5 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3F015F36274471C900E3E8D5 /* Moya */; };
+		3F015F39274472C800E3E8D5 /* Cryptotarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F015F38274472C800E3E8D5 /* Cryptotarget.swift */; };
+		3F015F3B274477ED00E3E8D5 /* CryptoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F015F3A274477ED00E3E8D5 /* CryptoRepository.swift */; };
 		3F661584273492A8004144DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F661583273492A8004144DE /* AppDelegate.swift */; };
 		3F661586273492A8004144DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F661585273492A8004144DE /* SceneDelegate.swift */; };
 		3F661588273492A8004144DE /* CryptoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F661587273492A8004144DE /* CryptoListTableViewController.swift */; };
@@ -44,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F015F3327446A8600E3E8D5 /* UIImageView+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImage.swift"; sourceTree = "<group>"; };
+		3F015F38274472C800E3E8D5 /* Cryptotarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptotarget.swift; sourceTree = "<group>"; };
+		3F015F3A274477ED00E3E8D5 /* CryptoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoRepository.swift; sourceTree = "<group>"; };
 		3F661580273492A8004144DE /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F661583273492A8004144DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F661585273492A8004144DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F015F37274471C900E3E8D5 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +158,7 @@
 				3F6615B427349398004144DE /* ViewCode.swift */,
 				3F6615B6273493C2004144DE /* UIView+Constrains.swift */,
 				3F6615BE2734A154004144DE /* Formatter+Currency.swift */,
+				3F015F3327446A8600E3E8D5 /* UIImageView+LoadImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,6 +180,8 @@
 				3F6615BC27349F4F004144DE /* CryptoCellModel.swift */,
 				3F6615C62734A935004144DE /* Models.swift */,
 				3F6615C82734BB89004144DE /* CryptoListViewModel.swift */,
+				3F015F38274472C800E3E8D5 /* Cryptotarget.swift */,
+				3F015F3A274477ED00E3E8D5 /* CryptoRepository.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -207,6 +218,9 @@
 			dependencies = (
 			);
 			name = CryptoTracker;
+			packageProductDependencies = (
+				3F015F36274471C900E3E8D5 /* Moya */,
+			);
 			productName = CryptoTracker;
 			productReference = 3F661580273492A8004144DE /* CryptoTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -279,6 +293,9 @@
 				Base,
 			);
 			mainGroup = 3F661577273492A8004144DE;
+			packageReferences = (
+				3F015F35274471C900E3E8D5 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 3F661581273492A8004144DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -321,10 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F015F3B274477ED00E3E8D5 /* CryptoRepository.swift in Sources */,
 				3F6615C72734A935004144DE /* Models.swift in Sources */,
 				3F6615C92734BB8A004144DE /* CryptoListViewModel.swift in Sources */,
 				3F6615C52734A81F004144DE /* NetworkService.swift in Sources */,
 				3F661588273492A8004144DE /* CryptoListTableViewController.swift in Sources */,
+				3F015F3427446A8600E3E8D5 /* UIImageView+LoadImage.swift in Sources */,
 				3F661584273492A8004144DE /* AppDelegate.swift in Sources */,
 				3F6615BB273497EC004144DE /* CryptoTableViewCell.swift in Sources */,
 				3F6615B7273493C2004144DE /* UIView+Constrains.swift in Sources */,
@@ -333,6 +352,7 @@
 				3F6615B527349398004144DE /* ViewCode.swift in Sources */,
 				3F6615BD27349F4F004144DE /* CryptoCellModel.swift in Sources */,
 				3F6615C22734A788004144DE /* Constants.swift in Sources */,
+				3F015F39274472C800E3E8D5 /* Cryptotarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +700,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F015F35274471C900E3E8D5 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F015F36274471C900E3E8D5 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F015F35274471C900E3E8D5 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F661578273492A8004144DE /* Project object */;
 }

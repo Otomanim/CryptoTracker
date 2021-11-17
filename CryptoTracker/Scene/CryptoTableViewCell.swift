@@ -11,6 +11,8 @@ final class CryptoTableViewCell: UITableViewCell {
     static var indentifier: String {
         String(describing: self)
     }
+    private var task: URLSessionDataTask?
+    
     private let nameLabel: UILabel = {
        let label = UILabel()
         label.font = .preferredFont(forTextStyle: .headline)
@@ -39,8 +41,7 @@ final class CryptoTableViewCell: UITableViewCell {
     private let imageViewLogo: UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .red
-        return imageView
+                return imageView
     }()
     
     
@@ -74,14 +75,15 @@ final class CryptoTableViewCell: UITableViewCell {
         nameLabel.text = nil
         symbolLabel.text = nil
         priceLabel.text = nil
+        task?.cancel()
+        task = nil
     }
     
     func configure(with model: CryptoCellModel){
         nameLabel.text = model.name
         symbolLabel.text = model.symbol
         priceLabel.text = model.price
-        
-//        guard let url = URL(string: model.imageString ?? "")
+        task = imageViewLogo.downloadImage(from: model.imageString)
     }
    
 }
