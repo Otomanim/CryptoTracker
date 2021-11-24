@@ -46,7 +46,7 @@ final class CryptoListViewModel {
         }
     }
     
-    init(repository: CryptoRepository = CryptoRepository()){
+    init(repository: CryptoRepository = CryptoRemoteRepository()){
         self.repository = repository
     }
     

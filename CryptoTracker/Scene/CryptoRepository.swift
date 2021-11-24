@@ -8,10 +8,17 @@
 import Foundation
 import Moya
 
-final class CryptoRepository {
+protocol CryptoRepository: AnyObject {
+    func requestAllCryptos(completion: @escaping (Result<[Crypto], Error>) -> Void)
+    func requestAllIcons(completion: @escaping (Result<[Icon], Error>) -> Void)
+}
+
+final class CryptoRemoteRepository: CryptoRepository {
     let provider: MoyaProvider<CryptoTarget>
     
-    init(provider: MoyaProvider<CryptoTarget> = MoyaProvider<CryptoTarget>(plugins: CryptoTarget.availablePlugins)) {
+    //    init(provider: MoyaProvider<CryptoTarget> = MoyaProvider<CryptoTarget>(plugins: CryptoTarget.availablePlugins)) {
+    //        self.provider = provider
+    init(provider: MoyaProvider<CryptoTarget> = MoyaProvider<CryptoTarget>()) {
         self.provider = provider
     }
     

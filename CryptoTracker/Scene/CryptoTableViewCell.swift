@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CryptoTableViewCell: UITableViewCell {
     static var indentifier: String {
         String(describing: self)
     }
-    private var task: URLSessionDataTask?
+//    private var task: URLSessionDataTask?
     
     private let nameLabel: UILabel = {
        let label = UILabel()
@@ -75,15 +76,36 @@ final class CryptoTableViewCell: UITableViewCell {
         nameLabel.text = nil
         symbolLabel.text = nil
         priceLabel.text = nil
-        task?.cancel()
-        task = nil
+//        task?.cancel()
+//        task = nil
+        imageViewLogo.kf.cancelDownloadTask()
     }
     
     func configure(with model: CryptoCellModel){
         nameLabel.text = model.name
         symbolLabel.text = model.symbol
         priceLabel.text = model.price
-        task = imageViewLogo.downloadImage(from: model.imageString)
+//        task = imageViewLogo.downloadImage(from: model.imageString)
+        
+//        let task = KF.url(URL(string: model.imageString ?? "")).set(to: imageViewLogo)
+        imageViewLogo.kf.indicatorType = .activity
+        let processor = BlurImageProcessor(blurRadius: 10) |>
+        RoundCornerImageProcessor(cornerRadius: 20)
+        let retry = DelayRetryStrategy(maxRetryCount: 5,
+                                       retryInterval: .seconds(3))
+        imageViewLogo.kf.setImage(with: URL(string: model.imageString),
+                                  options: [.processor(processor),
+                                                .retryStrategy(retry),
+                                            .transition(ImageTransition.fade(3))]) {result in
+            switch result {
+            case . failure:
+                self.imageViewLogo.image = #imageLiteral(resourceName: "placeholder-image")
+            default: break
+            }
+        }
+        
+        
+        
     }
    
 }

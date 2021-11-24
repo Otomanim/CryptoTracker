@@ -44,26 +44,26 @@ enum CryptoTarget: TargetType {
     
 }
 
-extension CryptoTarget: AccessTokenAuthorizable {
-    var authorizationType: AuthorizationType? {
-        return .bearer
-    }
-    
-    static var authPlugin: AccessTokenPlugin {
-        return AccessTokenPlugin { target in
-//            return "test-api-auth"
-            guard let cryptoTarget = target as? CryptoTarget else {return ""}
-            switch cryptoTarget {
-            case .loadCryptos:
-                return "custom-value"
-            case .loadImages:
-                return ""
-            }
-            
-        }
-    }
-    static var availablePlugins: [PluginType] {
-        [authPlugin]
-    }
-    
-}
+//extension CryptoTarget: AccessTokenAuthorizable {
+//    var authorizationType: AuthorizationType? {
+//        return .bearer
+//    }
+//    
+//    static var authPlugin: AccessTokenPlugin {
+//        return AccessTokenPlugin { target in
+////            return "test-api-auth"
+//            guard let cryptoTarget = target as? CryptoTarget else {return ""}
+//            switch cryptoTarget {
+//            case .loadCryptos:
+//                return "custom-value"
+//            case .loadImages:
+//                return ""
+//            }
+//            
+//        }
+//    }
+//    static var availablePlugins: [PluginType] {
+//        [authPlugin]
+//    }
+//    
+//}
