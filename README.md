@@ -7,7 +7,7 @@ This project consists of the consumption of a Currency API with dependency injec
 <img width="480" alt="Screen Shot 2022-10-20 at 17 28 52" src="https://user-images.githubusercontent.com/89124140/197051733-f6146d27-cf97-400e-87c0-aaf0b8fbeec7.png">
 
 
-#Frameworks
+# Frameworks
 
 I first used URLSession for API consumption and I changed it to study in framework using Alamofire first and lastly Moya.
 
