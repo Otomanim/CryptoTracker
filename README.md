@@ -13,3 +13,8 @@ I first used URLSession for API consumption and I changed it to study in framewo
 
 To handle the image and receive it from the API I used the kingfisher library.
  
+# URL 
+
+The project consumes this URL
+
+https://www.coinapi.io/
