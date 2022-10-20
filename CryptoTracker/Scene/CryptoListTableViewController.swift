@@ -8,6 +8,7 @@
 import UIKit
 
 final class CryptoListTableViewController: UIViewController {
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.delegate = self
