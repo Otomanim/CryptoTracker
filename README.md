@@ -1,4 +1,4 @@
-# CryptoTracker
+## CryptoTracker
 
 This project consists of the consumption of a Currency API with dependency injection in Viewcode, built on top of a tableView using default cells of the tableView itself
 
